@@ -7,8 +7,8 @@ import java.io.*;
  */
 public class FileService {
 
-    private final String file = "/Users/danielmelton/Documents/test.txt.rtf";
-    private File output = new File("/Users/danielmelton/Documents/output.txt");
+    private final String file = "/var/log/squid3/access.log";
+    private File output = new File("/home/pi/output.txt");
     private PrintWriter writer;
 
     public File getOutput() {
@@ -34,7 +34,7 @@ public class FileService {
     public void readWrite() {
         try {
             String b;
-            writer = new PrintWriter(new FileWriter("/Users/danielmelton/Documents/output.txt"));
+            writer = new PrintWriter(new FileWriter("/home/pi/output.txt"));
             BufferedReader reader = new BufferedReader(new FileReader(file));
             while((b = reader.readLine()) != null) {
                 writer.println(b);
